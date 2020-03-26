@@ -19,6 +19,7 @@
                 </div>
 
                 <div class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0">
+                <a href="<?php echo base_url(); ?>grupos" style="text-decoration: none;">
                     <div class="icon-box">
                         <figure class="d-flex justify-content-center">
                             <img src="assets/images/icono-grupo-gris.png" alt="">
@@ -33,6 +34,7 @@
                             <p>Agrega, edita y elimina grupos asociados a la parroquia</p>
                         </div>
                     </div>
+                    </a>
                 </div>
 
                 <div class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0">

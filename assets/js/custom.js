@@ -158,6 +158,13 @@
         $('.portfolio-item:hidden').slice(0, 9).addClass('visible');
     });
 
-
-
+    //Selecciona el tab del menu al de la pagina actual
+    $($(".opcion-header").get().reverse()).each(function (index) {
+        if (window.location.href.startsWith($(this).attr('href')))
+        {
+            $(this).parent().addClass('current-menu-item');
+            return false;
+        }
+    });
+    
 })(jQuery);

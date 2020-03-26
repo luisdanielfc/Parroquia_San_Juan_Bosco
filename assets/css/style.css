@@ -398,7 +398,7 @@ a:hover, a:active {
 # Elements Page
 --------------------------------------------------------------*/
 .elements-wrap {
-    margin-top: 80px;
+    margin-top: 30px;
 }
 
 .elements-page .elements-heading .entry-title {
@@ -755,7 +755,7 @@ ul.tabs-nav .tab-nav.active {
 .home-page-welcome {
     position: relative;
     padding: 96px 0;
-    background: url("images/welcome-bg.jpg") no-repeat center;
+    background: url("assets/images/welcome-bg.jpg") no-repeat center;
     background-size: cover;
     z-index: 99;
 }
@@ -988,7 +988,7 @@ ul.tabs-nav .tab-nav.active {
 .our-causes {
     position: relative;
     padding: 96px 0;
-    background: url("images/cause-bg.jpg") no-repeat center;
+    background: url("assets/images/cause-bg.jpg") no-repeat center;
     background-size: cover;
     z-index: 99;
 }
@@ -1122,8 +1122,8 @@ ul.tabs-nav .tab-nav.active {
 .single-page .page-header {
     position: relative;
     z-index: 99;
-    padding-top: 100px;
-    padding-bottom: 72px;
+    padding-top: 30px;
+    padding-bottom: 30px;
     background-size: cover !important;
 }
 
@@ -1140,7 +1140,7 @@ ul.tabs-nav .tab-nav.active {
 
 .single-page .page-header h1 {
     position: relative;
-    padding-bottom: 24px;
+    padding-bottom: 5px;
     font-size: 36px;
     font-weight: 600;
     color: #fff;
@@ -1158,7 +1158,7 @@ ul.tabs-nav .tab-nav.active {
 }
 
 .about-page .page-header {
-    background: url(images/about-bg.jpg) no-repeat center;
+    background: url(../images/about-bg.jpg) no-repeat center;
 }
 
 .about-page .welcome-wrap {
@@ -1288,7 +1288,7 @@ ul.tabs-nav .tab-nav.active {
 # Causes
 --------------------------------------------------------------*/
 .causes-page .page-header {
-    background: url(images/causes-bg.jpg) no-repeat center;
+    background: url(assets/images/causes-bg.jpg) no-repeat center;
 }
 
 .causes-page .featured-cause {
@@ -1367,7 +1367,7 @@ ul.tabs-nav .tab-nav.active {
 # Single Cause
 --------------------------------------------------------------*/
 .single-cause .page-header {
-    background: url(images/single-cause-bg.jpg) no-repeat center;
+    background: url(assets/images/single-cause-bg.jpg) no-repeat center;
 }
 
 .single-cause .highlighted-cause {
@@ -1524,7 +1524,7 @@ ul.tabs-nav .tab-nav.active {
 # Portfolio
 --------------------------------------------------------------*/
 .portfolio .page-header {
-    background: url(images/portfolio-bg.jpg) no-repeat center;
+    background: url(assets/images/portfolio-bg.jpg) no-repeat center;
 }
 
 .portfolio-wrap {
@@ -1577,7 +1577,7 @@ ul.tabs-nav .tab-nav.active {
 # News
 --------------------------------------------------------------*/
 .news-page .page-header {
-    background: url(images/news-bg.jpg) no-repeat center;
+    background: url(assets/images/news-bg.jpg) no-repeat center;
 }
 
 .news-wrap {
@@ -1878,7 +1878,7 @@ ul.tabs-nav .tab-nav.active {
 # Contact Page
 --------------------------------------------------------------*/
 .contact-page .page-header {
-    background: url(images/contact-bg.jpg) no-repeat center;
+    background: url(assets/images/contact-bg.jpg) no-repeat center;
 }
 
 .contact-page-wrap {
@@ -1989,7 +1989,7 @@ ul.tabs-nav .tab-nav.active {
 # Contact Page
 --------------------------------------------------------------*/
 .elements-page .page-header {
-    background: url(images/elements-bg.jpg) no-repeat center;
+    background: url(assets/images/elements-bg.jpg) no-repeat center;
 }
 
 /*--------------------------------------------------------------
@@ -2000,7 +2000,7 @@ ul.tabs-nav .tab-nav.active {
     padding: 96px 0 90px;
     font-weight: 500;
     color: #929191;
-    background: url("images/foot-bg.jpg") no-repeat center;
+    background: url("../images/foot-bg.jpg") no-repeat center;
     background-size: cover;
     z-index: 99;
 }
