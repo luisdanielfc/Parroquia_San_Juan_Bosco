@@ -1,31 +1,31 @@
 <?php
     /**
-     * Controlador de la clase Grupos
+     * Controlador de la clase Noticias
      */
-    class Grupos extends CI_Controller {
+    class Noticias extends CI_Controller {
         /**
          * Metodo que carga la pagina inicial del controlador
          */
         public function index($data = null) {
-            $data['grupos'] = $this->grupo_modelo->getGrupos();
+            $data['noticias'] = $this->noticia_modelo->getGrupos();
 
             $this->load->view('templates/Header');
-            $this->load->view('paginas/grupos/indice', $data);
+            $this->load->view('paginas/noticias/indice', $data);
             $this->load->view('templates/Footer');
         }
 
         /**
-         * Metodo que carga la vista para ver informacion de un grupo especifico
-         * @param $slug identificador del grupo a ver
+         * Metodo que carga la vista para ver informacion de una noticia en especifico
+         * @param $slug identificador de la noticia a ver
          */
         public function ver($slug = null) {
-            $data['grupo'] = $this->grupo_modelo->getGrupo($slug);
+            $data['noticia'] = $this->noticia_modelo->getNoticia($slug);
 
-            if (empty($data['grupo']))
+            if (empty($data['noticia']))
                 show_404();
 
             $this->load->view('templates/Header');
-            $this->load->view('paginas/grupos/ver', $data);
+            $this->load->view('paginas/noticias/ver', $data);
             $this->load->view('templates/Footer');    
         }
 
@@ -34,84 +34,84 @@
          */
         public function crear() {
             //Se establecen las reglas de los campos necesarios
-            $this->form_validation->set_rules('nombre', 'Nombre', 'required');
+            $this->form_validation->set_rules('titulo', 'Titulo', 'required');
             $this->form_validation->set_rules('contenido', 'Contenido', 'required');
             $this->form_validation->set_message('required', 'El campo %s es requerido');
             
             //Si el usuario ingreso todos los adatos requeridos
             if ($this->form_validation->run() == true) {
                 try {
-                    $this->crearGrupo();
+                    $this->crearNoticia();
                     $data['exito'] = true;
-                    $data['mensaje'] = "El Grupo " . $this->input->post('nombre') 
+                    $data['mensaje'] = "La noticia " . $this->input->post('titulo') 
                         . " ha sido crado exitosmanete";
                 } catch (Exception $e) {
                     $data['exito'] = false;
-                    $data['mensaje'] = "El Grupo " . $this->input->post('nombre') 
+                    $data['mensaje'] = "La noticia " . $this->input->post('titulo') 
                         . " NO fue creado. Razón: " . $e->getMessage();
                 }
 
                 $this->index($data);
             } else {
                 $this->load->view('templates/Header');
-                $this->load->view('paginas/grupos/crear');
+                $this->load->view('paginas/noticias/crear');
                 $this->load->view('templates/Footer');
             }
         }
 
         /**
-         * Metodo que crea un grupo
+         * Metodo que crea una noticia
          */
-        private function crearGrupo() {
+        private function crearNoticia() {
             $data = array(
-                'Nombre' => $this->input->post('nombre'),
-                'HTML' => $this->input->post('contenido')
+                'Titulo' => $this->input->post('titulo'),
+                'Contenido' => $this->input->post('contenido')
             );
 
-            $this->grupo_modelo->insertarGrupo($data);
+            $this->noticia_modelo->insertarGrupo($data);
         }
 
         /**
-         * Metodo que carga vista de edicion de grupo
-         * @param $id identificador del grupo a editar
+         * Metodo que carga vista de edicion de una noticia
+         * @param $id identificador de la noticia a editar
          */
         public function editar($id) {
-            $data["grupo"] = $this->grupo_modelo->getGrupo($id);
+            $data["grupo"] = $this->noticia_modelo->getGrupo($id);
 
-            $this->form_validation->set_rules('nombre', 'Nombre', 'required');
+            $this->form_validation->set_rules('titulo', 'Titulo', 'required');
             $this->form_validation->set_rules('contenido', 'Contenido', 'required');
             $this->form_validation->set_message('required', 'El campo %s es requerido');
 
             $this->load->view('templates/Header');
-            $this->load->view('paginas/grupos/editar', $data);
+            $this->load->view('paginas/noticias/editar', $data);
             $this->load->view('templates/Footer');
         }
 
         /**
-         * Metodo que actualiza un grupo
+         * Metodo que actualiza una noticia
          */
         public function actualizar() {
-            $this->grupo_modelo->actualizarGrupo(array(
+            $this->noticia_modelo->actualizarnoticia(array(
                 'Id' => $this->input->post('id'),
-                'Nombre' => $this->input->post('nombre'),
-                'HTML' => $this->input->post('contenido')
+                'Titulo' => $this->input->post('titulo'),
+                'Contenido' => $this->input->post('contenido')
                 )
             );
             
-            redirect('grupos');
+            redirect('noticias');
         }
 
         /**
-         * Metodo que elimina un grupo
-         * @param $id identificador del grupo a eliminar
+         * Metodo que elimina una noticia
+         * @param $id identificador de la noticia a eliminar
          */
         public function eliminar($id) {
-            $this->grupo_modelo->eliminarGrupo($id);
+            $this->noticia_modelo->eliminarNoticia($id);
             /*$this->index(array(
                     "exito" => true,
                     "mensaje" => "El grupo ha sido eliminado."
                 )
             );*/
-            redirect('grupos');
+            redirect('noticias');
         }
     }

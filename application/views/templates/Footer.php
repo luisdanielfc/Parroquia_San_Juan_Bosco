@@ -4,7 +4,7 @@
                 <div class="row">
                     <div class="col-12 col-md-6 col-lg-3">
                         <div class="foot-about">
-                            <h2><a class="foot-logo" href="#"><img src="<?php echo base_url()?>assets/images/foot-logo.png" alt=""></a></h2>
+                            <h2><a class="foot-logo" href="<?php echo base_url(); ?>"><img src="<?php echo base_url()?>assets/images/logo.png" alt=""></a></h2>
 
                             <p>Lorem ipsum dolor sit amet, con sectetur adipiscing elit. Mauris temp us vestib ulum mauris.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris.Lorem ipsum dolo.</p>
 
@@ -20,16 +20,14 @@
                     </div>
 
                     <div class="col-12 col-md-6 col-lg-3 mt-5 mt-md-0">
-                        <h2>Useful Links</h2>
+                        <h2>Enlaces de Interés</h2>
 
                         <ul>
-                            <li><a href="#">Privacy Polticy</a></li>
-                            <li><a href="#">Become  a Volunteer</a></li>
-                            <li><a href="#">Donate</a></li>
-                            <li><a href="#">Testimonials</a></li>
-                            <li><a href="#">Causes</a></li>
-                            <li><a href="#">Portfolio</a></li>
-                            <li><a href="#">News</a></li>
+                            <li><a href="<?php echo base_url(); ?>">Inicio</a></li>
+                            <li><a href="<?php echo base_url(); ?>quienes_somos">¿Quiénes Somos?</a></li>
+                            <li><a href="<?php echo base_url(); ?>grupos">Grupos</a></li>
+                            <li><a href="<?php echo base_url(); ?>noticias">Noticias</a></li>
+                            <li><a href="<?php echo base_url(); ?>contactanos">Contáctanos</a></li>
                         </ul>
                     </div>
 
