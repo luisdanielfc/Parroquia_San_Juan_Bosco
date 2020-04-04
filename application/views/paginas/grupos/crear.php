@@ -18,8 +18,8 @@
                     <h3>Contenido</h3>
 
                     <div class="billing-information  d-flex flex-wrap justify-content-between align-items-center">
-                        <!--<textarea id="editor" name="contenido"></textarea>-->
-                        <?php echo $this->ckeditor->editor("contenido", ""); ?> 
+                        <textarea id="editor" name="contenido"></textarea>
+                        <?php /*echo $this->ckeditor->editor("contenido", "");*/ ?> 
                     </div>
                 </div>
             </div>
@@ -35,10 +35,10 @@
     </form>
 </body>
 
-<!--<script src="https://cdn.ckeditor.com/ckeditor5/17.0.0/classic/ckeditor.js"></script>
-<script src="https://ckeditor.com/apps/ckfinder/3.5.0/ckfinder.js"></script>-->
-<script type="text/javascript" src="<?php echo base_url("assets/ckeditor/ckeditor.js"); ?>"></script>
-<script type="text/javascript" src="<?php echo base_url("assets/ckfinder/ckfinder.js"); ?>"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/17.0.0/classic/ckeditor.js"></script>
+<script src="https://ckeditor.com/apps/ckfinder/3.5.0/ckfinder.js"></script>
+<!--<script type="text/javascript" src="<?php /*echo base_url("assets/ckeditor/ckeditor.js");*/ ?>"></script>
+<script type="text/javascript" src="<?php /*echo base_url("assets/ckfinder/ckfinder.js");*/ ?>"></script>-->
 
 <script>
     document.addEventListener('DOMContentLoaded', function(event) { 
@@ -145,7 +145,7 @@
                 return new MyUploadAdapter( loader );
             };
         }*/
-        /*import CKFinder from '<?php echo base_url(); ?>@ckeditor/ckeditor5-ckfinder/src/ckfinder';
+        import CKFinder from '<?php echo base_url(); ?>assets/node_modules/@ckeditor/ckeditor5-ckfinder/src/ckfinder';
 
         //Se inicializa el editor
         ClassicEditor

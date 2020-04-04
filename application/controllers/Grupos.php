@@ -33,7 +33,7 @@
          * Metodo que carga la vista de creacion de grupo
          */
         public function crear() {
-            $this->load->library('ckeditor');
+            /*$this->load->library('ckeditor');
             $this->load->library('ckfinder');
 
 
@@ -42,12 +42,12 @@
             $this->ckeditor->config['toolbar'] = array(
                             array( 'Source', '-', 'Bold', 'Italic', 'Underline', '-','Cut','Copy','Paste','PasteText','PasteFromWord','-','Undo','Redo','-','NumberedList','BulletedList' )
                                                                 );
-            $this->ckeditor->config['language'] = 'it';
-            $this->ckeditor->config['width'] = '730px';
+            $this->ckeditor->config['language'] = 'es';
+            $this->ckeditor->config['width'] = '100%';
             $this->ckeditor->config['height'] = '300px';            
 
             //Add Ckfinder to Ckeditor
-            $this->ckfinder->SetupCKEditor($this->ckeditor,'../../assets/ckfinder/');
+            $this->ckfinder->SetupCKEditor($this->ckeditor,'../../assets/ckfinder/');*/
 
             //Se establecen las reglas de los campos necesarios
             $this->form_validation->set_rules('nombre', 'Nombre', 'required');

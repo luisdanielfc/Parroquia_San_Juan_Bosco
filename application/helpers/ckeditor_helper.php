@@ -45,7 +45,8 @@ function cke_initialize($data = array()) {
 function cke_create_instance($data = array()) {
 	
     $return = "<script type=\"text/javascript\">
-     	CKEDITOR.replace('" . $data['id'] . "', {";
+	ClassicEditor
+	.create('" . $data['id'] . "', {";
     
     		//Adding config values
     		if(isset($data['config'])) {
