@@ -38,11 +38,9 @@
                     <p>Está seguro de que desea eliminar la noticia actual?</p>
                 </div>
                 <div class="modal-footer">
-                    <?php 
-                        echo form_open('noticias/eliminar/'.$noticia["Id"]); 
-                    ?>
+                    <?php echo form_open('noticias/eliminar/'.$noticia["Id"]); ?>
                         <button type="submit" class="btn orange-border">Eliminar</button>
-                    </form>
+                    <?php echo form_close(); ?>
                     
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                 </div>

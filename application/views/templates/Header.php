@@ -25,6 +25,58 @@
 
     <body class="single-page about-page">
         <header class="site-header">
+
+            <?php 
+                if (isset($mensaje))
+                {
+                    echo ($exito == true) ?
+                    "<div class='alert alert-success' style='margin-bottom: 0;'>
+                        <strong>Listo!</strong> " . $mensaje . "
+                    </div>"
+                    : "<div class='alert alert-danger' style='margin-bottom: 0;'>
+                        <strong>Error</strong> " . $mensaje . "
+                    </div>";
+                }
+            ?>
+
+            <div class="top-header-bar">
+                <div class="container">
+                    <div class="row flex-wrap justify-content-center justify-content-lg-between align-items-lg-center">
+
+                        <!-- Si el usuario se encuentra logueado -->
+                        <?php if (isset($usuario)) { 
+                            /*echo print_r($usuario);*/?>
+                                <div class="col-12 col-lg-8 d-none d-md-flex flex-wrap justify-content-center justify-content-lg-start mb-3 mb-lg-0">
+                                    <div class="header-bar-email">
+                                        Bienvenido!
+                                    </div><!-- .header-bar-email -->
+
+                                    <div class="header-bar-text">
+                                        <p><span><?php echo $usuario['Nombre']; ?></span></p>
+                                    </div><!-- .header-bar-text -->
+                                </div><!-- .col -->
+
+                                <form id="log-out-form" method="post" action="<?php echo base_url(); ?>usuarios/logOut" class="col-12 col-lg-4 d-flex flex-wrap justify-content-center justify-content-lg-end align-items-center">
+                                    <div class="donate-btn">
+                                        <a type="submit" onclick="document.getElementById('log-out-form').submit()" style="cursor: pointer;">Salir</a>
+                                    </div><!-- .donate-btn -->
+                                </form><!-- .col -->
+                                </div>
+                        <?php } else { ?>
+                            <div class="col-12 col-lg-4 d-none d-md-flex flex-wrap justify-content-center justify-content-lg-start mb-3 mb-lg-0"></div>
+                            <form id="log-in-form" method="post" action="<?php echo base_url(); ?>usuarios/logIn" class="col-12 col-lg-8 d-flex flex-wrap justify-content-center justify-content-lg-end align-items-center">
+                                <input name="usuario" placeholder="Usuario" style="margin-right: 10px;">
+                                <input type="password" name="contrasena" placeholder="Contraseña" style="margin-right: 10px;">
+
+                                <div class="donate-btn">
+                                    <a type="submit" onclick="document.getElementById('log-in-form').submit()" style="cursor: pointer;">Ingresar</a>
+                                </div>
+                            </form>
+                        <?php } ?>    
+                    </div>
+                </div>
+            </div>
+
             <div class="nav-bar">
                 <div class="container">
                     <div class="row">

@@ -4,18 +4,11 @@
                 <div class="row">
                     <div class="col-12 col-md-6 col-lg-3">
                         <div class="foot-about">
-                            <h2><a class="foot-logo" href="<?php echo base_url(); ?>"><img src="<?php echo base_url()?>assets/images/logo.png" alt=""></a></h2>
+                            <h2>
+                                <a class="foot-logo" href="<?php echo base_url(); ?>"><img src="<?php echo base_url()?>assets/images/logo-invertido.png" alt=""></a>
+                            </h2>
 
-                            <p>Lorem ipsum dolor sit amet, con sectetur adipiscing elit. Mauris temp us vestib ulum mauris.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestib ulum mauris.Lorem ipsum dolo.</p>
-
-                            <ul class="d-flex flex-wrap align-items-center">
-                                <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                                <li><a href="#"><i class="fa fa-behance"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            </ul>
+                            <p>Arquidiócesis de Coro, ubicada en la Ciudad de Coro y  de formación salesiana durante 50 años</p>
                         </div>
                     </div>
 
@@ -32,42 +25,23 @@
                     </div>
 
                     <div class="col-12 col-md-6 col-lg-3 mt-5 mt-md-0">
-                        <div class="foot-latest-news">
-                            <h2>Latest News</h2>
-
+                        <div class="foot-contact">
+                            <h2>Nuestras Redes</h2>
                             <ul>
-                                <li>
-                                    <h3><a href="#">A new cause to help</a></h3>
-                                    <div class="posted-date">MArch 12, 2018</div>
-                                </li>
-                                <li>
-                                    <h3><a href="#">We love to help people</a></h3>
-                                    <div class="posted-date">MArch 12, 2018</div>
-                                </li>
-                                <li>
-                                    <h3><a href="#">The new ideas for helping</a></h3>
-                                    <div class="posted-date">MArch 12, 2018</div>
-                                </li>
+                                <li><i class="fa fa-instagram"></i><a href="https://www.instagram.com/psanjuanbosco.coro" target="_blank"><span>psanjuanbosco.coro</span></a></li>
                             </ul>
                         </div>
                     </div>
 
                     <div class="col-12 col-md-6 col-lg-3 mt-5 mt-md-0">
                         <div class="foot-contact">
-                            <h2>Contact</h2>
+                            <h2>Contactos</h2>
 
                             <ul>
-                                <li><i class="fa fa-phone"></i><span>+45 677 8993000 223</span></li>
-                                <li><i class="fa fa-envelope"></i><span>office@template.com</span></li>
-                                <li><i class="fa fa-map-marker"></i><span>Main Str. no 45-46, b3, 56832, Los Angeles, CA</span></li>
+                                <li><i class="fa fa-phone"></i><span>+58 268 252 8172</span></li>
+                                <li><i class="fa fa-envelope"></i><span>psanjuanbosco.coro@gmail.com</span></li>
+                                <li><i class="fa fa-map-marker"></i><span>Av. Los Médanos con Av. Josefa Camejo</span></li>
                             </ul>
-                        </div>
-
-                        <div class="subscribe-form">
-                            <form class="d-flex flex-wrap align-items-center">
-                                <input type="email" placeholder="Your email">
-                                <input type="submit" value="send">
-                            </form>
                         </div>
                     </div>
                 </div>
@@ -84,19 +58,6 @@
     <script type='text/javascript' src='<?php echo base_url()?>assets/js/jquery.barfiller.js'></script>
     <script type='text/javascript' src='<?php echo base_url()?>assets/js/custom.js'></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
-    <?php 
-        if (isset($mensaje))
-        {
-            echo ($exito == true) ?
-            "<div class='alert alert-success'>
-                <strong>Listo!</strong> " . $mensaje . "
-            </div>"
-            : "<div class='alert alert-danger'>
-                <strong>Error</strong> " . $mensaje . "
-            </div>";
-        }
-    ?>
-
+    
     </body>
 </html>

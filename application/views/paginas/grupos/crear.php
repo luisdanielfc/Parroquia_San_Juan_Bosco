@@ -18,7 +18,8 @@
                     <h3>Contenido</h3>
 
                     <div class="billing-information  d-flex flex-wrap justify-content-between align-items-center">
-                        <textarea id="editor" name="contenido"></textarea>
+                        <!--<textarea id="editor" name="contenido"></textarea>-->
+                        <?php echo $this->ckeditor->editor("contenido", ""); ?> 
                     </div>
                 </div>
             </div>
@@ -34,7 +35,11 @@
     </form>
 </body>
 
-<script src="https://cdn.ckeditor.com/ckeditor5/17.0.0/classic/ckeditor.js"></script>
+<!--<script src="https://cdn.ckeditor.com/ckeditor5/17.0.0/classic/ckeditor.js"></script>
+<script src="https://ckeditor.com/apps/ckfinder/3.5.0/ckfinder.js"></script>-->
+<script type="text/javascript" src="<?php echo base_url("assets/ckeditor/ckeditor.js"); ?>"></script>
+<script type="text/javascript" src="<?php echo base_url("assets/ckfinder/ckfinder.js"); ?>"></script>
+
 <script>
     document.addEventListener('DOMContentLoaded', function(event) { 
         //Clase apadtador que permite subir archivos al servidor
@@ -140,12 +145,21 @@
                 return new MyUploadAdapter( loader );
             };
         }*/
+        /*import CKFinder from '<?php echo base_url(); ?>@ckeditor/ckeditor5-ckfinder/src/ckfinder';
 
         //Se inicializa el editor
         ClassicEditor
-            .create(document.querySelector('#editor')/*, {
-                extraPlugins: [ MyCustomUploadAdapterPlugin ]
-            }*/)
+            .create(document.querySelector('#editor'), {
+                plugins: [ CKFinder ],
+
+                // Enable the "Insert image" button in the toolbar.
+                toolbar: [ 'imageUpload' ],
+
+                ckfinder: {
+                    // Upload the images to the server using the CKFinder QuickUpload command.
+                    uploadUrl: '<?php echo base_url(); ?>ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images&responseType=json'
+                }
+            })
             .then(editor => {
                 window.editor = editor;
                 document.getElementsByClassName("ck-editor")[0].style.width = "100%";

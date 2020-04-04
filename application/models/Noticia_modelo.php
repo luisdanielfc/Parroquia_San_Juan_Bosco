@@ -19,6 +19,8 @@
 
         /**
          * Funcion que retorna una noticia en especifico dado su ID
+         * @param $slug identificador unico de la noticia a ver
+         * @return array con informacion de la noticia buscada; null en caso contrario
          */
         public function getNoticia($slug) {
             return $this->db->get_where('Noticia', array('Id' => $slug))->row_array();

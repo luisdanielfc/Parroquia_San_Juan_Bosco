@@ -1,7 +1,9 @@
+<?php if (isset($usuario['Nombre'])) { ?>
+
 <div class="home-page-icon-boxes">
         <div class="container">
             <div class="row">
-                <div class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0">
+                <!--<div class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0">
                     <div class="icon-box">
                         <figure class="d-flex justify-content-center">
                             <img src="assets/images/icono-info-gris.png" alt="">
@@ -16,7 +18,7 @@
                             <p>Edita las páginas básicas del sitio web: ¿Quiénes Somos? y Contáctanos</p>
                         </div>
                     </div>
-                </div>
+                </div>-->
 
                 <div class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0">
                 <a href="<?php echo base_url(); ?>grupos" style="text-decoration: none;">
@@ -56,3 +58,6 @@
             </div>
         </div>
     </div>
+<?php } else { ?>
+    Necesita iniciar sesión para acceder a éste módulo.
+<?php } ?>
