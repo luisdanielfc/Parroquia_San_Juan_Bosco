@@ -59,6 +59,7 @@ $route['noticias/crear'] = 'noticias/crear';
 $route['noticias/editar'] = 'noticias/editar';
 $route['noticias/(:any)'] = 'noticias/ver/$1';
 $route['noticias'] = 'noticias/index';
+$route['uploads'] = 'uploads/hacer';
 $route['default_controller'] = 'paginas/view';
 $route['(:any)'] = 'paginas/view/$1';
 $route['404_override'] = '';

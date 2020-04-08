@@ -48,7 +48,6 @@
 
             //Add Ckfinder to Ckeditor
             $this->ckfinder->SetupCKEditor($this->ckeditor,'../../assets/ckfinder/');*/
-
             //Se establecen las reglas de los campos necesarios
             $this->form_validation->set_rules('nombre', 'Nombre', 'required');
             $this->form_validation->set_rules('contenido', 'Contenido', 'required');
@@ -129,5 +128,14 @@
                 )
             );*/
             redirect('grupos');
+        }
+
+        public function uploads($nombreImagen) {
+            die();
+            $imagen = __DIR__."assets/ckeditor/uploads/".$nombreImagen. base_url("assets/ckeditor/uploads/".$nombreImagen);
+            //header("Content-type: image/png");
+            //header("Content-length: $size");
+            header("Content-Disposition: attachment; filename=$nombreImagen");       
+            echo '<img src="'.base_url("assets/ckeditor/uploads/".$nombreImagen).'">';
         }
     }

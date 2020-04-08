@@ -35,10 +35,10 @@
     </form>
 </body>
 
-<script src="https://cdn.ckeditor.com/ckeditor5/17.0.0/classic/ckeditor.js"></script>
-<script src="https://ckeditor.com/apps/ckfinder/3.5.0/ckfinder.js"></script>
-<!--<script type="text/javascript" src="<?php /*echo base_url("assets/ckeditor/ckeditor.js");*/ ?>"></script>
-<script type="text/javascript" src="<?php /*echo base_url("assets/ckfinder/ckfinder.js");*/ ?>"></script>-->
+<!--<script src="https://cdn.ckeditor.com/ckeditor5/17.0.0/classic/ckeditor.js"></script>
+<script src="https://ckeditor.com/apps/ckfinder/3.5.0/ckfinder.js"></script>-->
+<script type="text/javascript" src="<?php echo base_url("assets/ckeditor/ckeditor.js"); ?>"></script>
+<!--<script type="text/javascript" src="<?php /*echo base_url("assets/ckfinder/ckfinder.js");*/ ?>"></script>-->
 
 <script>
     document.addEventListener('DOMContentLoaded', function(event) { 
@@ -47,6 +47,7 @@
             constructor( loader ) {
                 // The file loader instance to use during the upload.
                 this.loader = loader;
+                this.url = "<?php echo base_url(); ?>assets/uploads";
             }
 
             // Starts the upload process.
@@ -73,7 +74,7 @@
                 // integration to choose the right communication channel. This example uses
                 // a POST request with JSON as a data structure but your configuration
                 // could be different.
-                var url = "<?php echo base_url(); ?>assets/uploads";
+                var url = "<?php echo base_url(); ?>uploads";
                 console.log(url);
                 xhr.open( 'POST', url, true );
                 xhr.responseType = 'json';
@@ -144,21 +145,12 @@
                 // Configure the URL to the upload script in your back-end here!
                 return new MyUploadAdapter( loader );
             };
-        }*/
-        import CKFinder from '<?php echo base_url(); ?>assets/node_modules/@ckeditor/ckeditor5-ckfinder/src/ckfinder';
+        }
 
         //Se inicializa el editor
         ClassicEditor
             .create(document.querySelector('#editor'), {
-                plugins: [ CKFinder ],
-
-                // Enable the "Insert image" button in the toolbar.
-                toolbar: [ 'imageUpload' ],
-
-                ckfinder: {
-                    // Upload the images to the server using the CKFinder QuickUpload command.
-                    uploadUrl: '<?php echo base_url(); ?>ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images&responseType=json'
-                }
+                extraPlugins: [ MyCustomUploadAdapterPlugin ],
             })
             .then(editor => {
                 window.editor = editor;
@@ -173,10 +165,16 @@
                 mensajeError.innerHTML('<strong>Error</strong> La libreria CKEditor tuvo un error. Por favor, consulte la consola de desarrollador del explorador para más información');
                 mensajeError.classList.add('alert');
                 mensajeError.classList.add('alert-danger');
-            });
+            });*/
         
             /*document.getElementById( 'botonCrear' ).onclick = () => {
                 document.getElementById("editor").value = editor.getData();
             }*/
+
+            CKEDITOR.replace( 'editor', {
+            height: 300,
+            filebrowserUploadUrl: "<?php echo base_url("assets/ckeditor/ck_uploads.php"); ?>",
+            filebrowserUploadMethod: 'form'
+        } );
     });
 </script>
