@@ -38,9 +38,9 @@
                             <h2>Contactos</h2>
 
                             <ul>
-                                <li><i class="fa fa-phone"></i><span>+58 268 252 8172</span></li>
-                                <li><i class="fa fa-envelope"></i><span>psanjuanbosco.coro@gmail.com</span></li>
-                                <li><i class="fa fa-map-marker"></i><span>Av. Los Médanos con Av. Josefa Camejo</span></li>
+                                <li><i class="fa fa-phone"></i><a href="tel:+582682528172"><span>+58 268 252 8172</span></a></li>
+                                <li><i class="fa fa-envelope"></i><a href="mailto:psanjuanbosco.coro@gmail.com" target="_blank"><span>psanjuanbosco.coro@gmail.com</span></a></li>
+                                <li><i class="fa fa-map-marker"></i><a href="https://goo.gl/maps/hnwECWcE5WwbtJAW9" target="_blank"><span>Avenida Los Médanos con Avenida Josefa Camejo. Sector San Bosco. Santa Ana de Coro, Falcón, Venezuela</span></li>
                             </ul>
                         </div>
                     </div>
