@@ -22,8 +22,13 @@
         },
         navigation: {
             nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev'
-        }
+            prevEl: '.swiper-button-prev',
+            hideOnClick: true,
+        },
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
     });
 
     // Cause Slider

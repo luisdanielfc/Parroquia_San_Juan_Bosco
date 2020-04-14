@@ -1,16 +1,19 @@
 <body>
         <input type="hidden" nanme="id" value="<?php echo $noticia["Id"]; ?>">
+        <?php if (isset($usuario)) { ?>
+
         <div class="container">
         <!--Agregar-->
-        <div class="row elements-wrap">
-            <div class="col-12">
-                <div class="entry-content elements-container">
-                    <a href="<?php echo base_url(); ?>noticias/editar/<?php echo $noticia["Id"];?>" class="btn orange-border">Editar</a>
-                    <button type="button" class="btn orange-border" data-toggle="modal" data-target="#modal-eliminar">Eliminar</button>
+            <div class="row elements-wrap">
+                <div class="col-12">
+                    <div class="entry-content elements-container">
+                        <a href="<?php echo base_url(); ?>noticias/editar/<?php echo $noticia["Id"];?>" class="btn orange-border">Editar</a>
+                        <button type="button" class="btn orange-border" data-toggle="modal" data-target="#modal-eliminar">Eliminar</button>
+                    </div>
                 </div>
             </div>
         </div>
-        </div>
+        <?php } ?>
         <div class="container">
             <div class="row" style="margin-top: 50px">
                 <div class="section-heading">

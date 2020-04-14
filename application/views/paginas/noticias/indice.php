@@ -12,6 +12,7 @@
 
     <div class="container">
         <!--Agregar-->
+        <?php if (isset($usuario)) { ?>
         <div class="row elements-wrap">
             <div class="col-12">
                 <div class="entry-content elements-container">
@@ -19,8 +20,9 @@
                 </div>
             </div>
         </div>
-        
+        <?php } ?>
         <?php 
+            if (!empty($noticias)) {
             $indicadorCierre = 3;
 
             for ($i = 0; $i < count($noticias); $i++) { 
@@ -65,6 +67,9 @@
                         </div>
                             </div>                                        
                                 </div>";
+        } else {
+            ?> No existen noticias en este momento. <?php
+        }
         ?>
     </div>
 </body>

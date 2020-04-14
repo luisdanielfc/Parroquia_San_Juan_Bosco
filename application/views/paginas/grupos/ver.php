@@ -1,5 +1,7 @@
 <body>
         <input type="hidden" nanme="id" value="<?php echo $grupo["Id"]; ?>">
+        <?php if (isset($usuario)) { ?>
+
         <div class="container">
         <!--Agregar-->
         <div class="row elements-wrap">
@@ -11,6 +13,7 @@
             </div>
         </div>
         </div>
+        <?php } ?>
         <div class="container">
             <div class="row" style="margin-top: 50px">
                 <div class="section-heading">
@@ -19,7 +22,7 @@
             </div>
             <div class="row" style="margin-top: 50px">
                 <div class="col-12">
-                    <?php echo $grupo["HTML"]; ?>
+                    <?php echo $grupo["Contenido"]; ?>
                 </div>
             </div>
         </div>

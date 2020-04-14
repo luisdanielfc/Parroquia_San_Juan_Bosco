@@ -22,11 +22,7 @@
 
                 $data['usuario'] = $usuario;
 
-                //echo print_r($data['usuario']);
-                //$this->load->view('templates/Header', $data);
-                //$this->load->view('paginas/administracion', $data);
-                //$this->load->view('templates/Footer');
-                redirect('administracion?usuario='.urlencode($usuario));
+                redirect('administracion');
             } else {
                 $data['exito'] = false;
                 $data['mensaje'] = 'El nombre de usuario y/o contraseña son inválidos';
@@ -38,9 +34,6 @@
                     )
                 );
                 redirect('inicio');
-                //$this->load->view('templates/Header', $data);
-                //$this->load->view('paginas/inicio');
-                //$this->load->view('templates/Footer');
             }
         }
 
@@ -49,9 +42,6 @@
          */
         public function logOut() {
             $this->session->sess_destroy();
-
-            $this->load->view('templates/Header');
-            $this->load->view('paginas/inicio');
-            $this->load->view('templates/Footer');
+            redirect('inicio');
         }
     }

@@ -33,21 +33,6 @@
          * Metodo que carga la vista de creacion de grupo
          */
         public function crear() {
-            /*$this->load->library('ckeditor');
-            $this->load->library('ckfinder');
-
-
-
-            $this->ckeditor->basePath = base_url().'assets/ckeditor/';
-            $this->ckeditor->config['toolbar'] = array(
-                            array( 'Source', '-', 'Bold', 'Italic', 'Underline', '-','Cut','Copy','Paste','PasteText','PasteFromWord','-','Undo','Redo','-','NumberedList','BulletedList' )
-                                                                );
-            $this->ckeditor->config['language'] = 'es';
-            $this->ckeditor->config['width'] = '100%';
-            $this->ckeditor->config['height'] = '300px';            
-
-            //Add Ckfinder to Ckeditor
-            $this->ckfinder->SetupCKEditor($this->ckeditor,'../../assets/ckfinder/');*/
             //Se establecen las reglas de los campos necesarios
             $this->form_validation->set_rules('nombre', 'Nombre', 'required');
             $this->form_validation->set_rules('contenido', 'Contenido', 'required');
@@ -80,7 +65,7 @@
         private function crearGrupo() {
             $data = array(
                 'Nombre' => $this->input->post('nombre'),
-                'HTML' => $this->input->post('contenido')
+                'Contenido' => $this->input->post('contenido')
             );
 
             $this->grupo_modelo->insertarGrupo($data);
@@ -109,7 +94,7 @@
             $this->grupo_modelo->actualizarGrupo(array(
                 'Id' => $this->input->post('id'),
                 'Nombre' => $this->input->post('nombre'),
-                'HTML' => $this->input->post('contenido')
+                'Contenido' => $this->input->post('contenido')
                 )
             );
             
@@ -130,12 +115,12 @@
             redirect('grupos');
         }
 
-        public function uploads($nombreImagen) {
+        /*public function uploads($nombreImagen) {
             die();
             $imagen = __DIR__."assets/ckeditor/uploads/".$nombreImagen. base_url("assets/ckeditor/uploads/".$nombreImagen);
             //header("Content-type: image/png");
             //header("Content-length: $size");
             header("Content-Disposition: attachment; filename=$nombreImagen");       
             echo '<img src="'.base_url("assets/ckeditor/uploads/".$nombreImagen).'">';
-        }
+        }*/
     }

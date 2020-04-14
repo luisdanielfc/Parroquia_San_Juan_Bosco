@@ -168,6 +168,7 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+
 .swiper-button-prev.swiper-button-disabled,
 .swiper-button-next.swiper-button-disabled {
   opacity: 0.35;

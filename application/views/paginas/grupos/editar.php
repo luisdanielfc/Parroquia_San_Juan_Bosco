@@ -19,7 +19,7 @@
                     <h3>Contenido</h3>
 
                     <div class="billing-information  d-flex flex-wrap justify-content-between align-items-center">
-                        <textarea id="editor" name="contenido"><?php echo $grupo["HTML"]; ?></textarea>
+                        <textarea id="editor" name="contenido"><?php echo $grupo["Contenido"]; ?></textarea>
                     </div>
                 </div>
             </div>
