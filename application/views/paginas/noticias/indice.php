@@ -37,7 +37,7 @@
         <div class="swiper-slide" id="<?php echo base_url(); ?>noticias/<?php echo $noticias[$i]["Id"]; ?>" onClick="redirect(this.id)" style="cursor: pointer;">
             <div class="cause-wrap" style="border: 1px solid #e0e0e0;">
                 <figure class="m-0">
-                    <img src="<?php echo base_url()?>assets/images/cause-2.jpg" alt="">
+                    <img src="<?php echo $noticias[$i]["imagen"]; ?>" alt="">
                 </figure>
 
                 <div class="cause-content-wrap">

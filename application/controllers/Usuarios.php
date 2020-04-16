@@ -20,13 +20,8 @@
                     )
                 );
 
-                $data['usuario'] = $usuario;
-
                 redirect('administracion');
-            } else {
-                $data['exito'] = false;
-                $data['mensaje'] = 'El nombre de usuario y/o contraseña son inválidos';
-                
+            } else {                
                 $this->session->set_flashdata('mensaje', 
                     array(
                         'exito' => false,

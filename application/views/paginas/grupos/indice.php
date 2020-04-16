@@ -38,7 +38,7 @@
         <div class="swiper-slide" id="<?php echo base_url(); ?>grupos/<?php echo $grupos[$i]["Id"]; ?>" onClick="redirect(this.id)" style="cursor: pointer;">
             <div class="cause-wrap" style="border: 1px solid #e0e0e0;">
                 <figure class="m-0">
-                    <img src="<?php echo base_url()?>assets/images/cause-1.jpg" alt="">
+                    <img src="<?php echo $grupos[$i]["imagen"]; ?>" alt="" style="max-width: 348px; max-height: 204px;">
                 </figure>
 
                 <div class="cause-content-wrap">

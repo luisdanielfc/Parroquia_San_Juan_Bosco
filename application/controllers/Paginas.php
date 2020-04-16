@@ -16,6 +16,11 @@
             if ($page == "inicio")
                 $data["slides"] = $this->slidesInicio();
             
+            if ($this->session->flashdata("mensaje") !== null) {
+                $data["exito"] = $this->session->flashdata("mensaje")["exito"];
+                $data["mensaje"] = $this->session->flashdata("mensaje")["mensaje"];
+            }
+            
             $this->load->view('templates/Header', $data);
             $this->load->view('paginas/'.$page, $data);
             $this->load->view('templates/Footer');
@@ -59,8 +64,8 @@
             }
 
             foreach ($grupos as $grupo) {
-                $grupo["Contenido"] = $this->getContenido($grupo["Contenido"]);
                 $grupo["imagen"] = $this->getImagen($grupo["Contenido"]);
+                $grupo["Contenido"] = $this->getContenido($grupo["Contenido"]);
 
                 if ($grupo["Contenido"] == "")
                     $grupo["Contenido"] = "Grupo de la Parroquia. Lea más información sobre este!";
@@ -69,8 +74,8 @@
             }
 
             foreach ($noticias as $noticia) {
-                $noticia["Contenido"] = $this->getContenido($noticia["Contenido"]);
                 $noticia["imagen"] = $this->getImagen($noticia["Contenido"]);
+                $noticia["Contenido"] = $this->getContenido($noticia["Contenido"]);
 
                 if ($noticia["Contenido"] == "")
                     $noticia["Contenido"] = "Noticia de la Parroquia. Lea más información sobre esta!";
@@ -108,7 +113,7 @@
             $direccion = 'src="../assets/ckeditor/uploads/';
 
             while (($lastPos = strpos($html, $direccion, $lastPos)) !== false) {
-                $positions[] = $lastPos;
+                $positions[] = $lastPos + strlen($direccion);
                 $lastPos = $lastPos + strlen($direccion);
             }
 
@@ -129,10 +134,9 @@
             }
 
             if ($imagen != "" || $this->endsWith($imagen, "jpg") || $this->endsWith($imagen, "jpeg") || $this->endsWith($imagen, "png")) {
-                $imagen = base_url("assets/".$imagen);
+                $imagen = base_url("assets/ckeditor/uploads/".$imagen);
             } else {
                 $dir = scandir(FCPATH."assets/images/muestra/");
-                //$imagen = $dir[array_rand($dir, 1)];
                 $imagen = base_url("assets/images/muestra/".$dir[array_rand($dir, 1)]);
             }
 
