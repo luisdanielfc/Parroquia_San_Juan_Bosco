@@ -21,8 +21,8 @@
             </div><!-- .hero-content-wrap -->
 
             <?php foreach ($slides["noticias"] as $noticia) { ?>
-                        <!--<div class="swiper-slide hero-content-wrap">
-                            <img src="<?php echo $noticia["imagen"]; ?>" alt="">
+                        <div class="swiper-slide hero-content-wrap">
+                            <img src="<?php echo $noticia["imagen"]; ?>" alt="" style="width: 1280px; height: 500px;">
 
                             <div class="hero-content-overlay position-absolute w-100 h-100">
                                 <div class="container h-100">
@@ -43,7 +43,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>-->
+                        </div>
             <?php 
                 }
 
@@ -51,7 +51,7 @@
                     //echo print_r($grupo);
             ?>
                         <div class="swiper-slide hero-content-wrap">
-                            <img src="<?php echo $grupo["imagen"]; ?>" alt="" style="max-width: 1280px;max-height: 500px;">
+                            <img src="<?php echo $grupo["imagen"]; ?>" alt="" style="width: 1280px; height: 500px;">
 
                             <div class="hero-content-overlay position-absolute w-100 h-100">
                                 <div class="container h-100">

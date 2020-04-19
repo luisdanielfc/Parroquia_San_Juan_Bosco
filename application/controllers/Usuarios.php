@@ -20,7 +20,7 @@
                     )
                 );
 
-                redirect('administracion');
+                redirect('inicio');
             } else {                
                 $this->session->set_flashdata('mensaje', 
                     array(

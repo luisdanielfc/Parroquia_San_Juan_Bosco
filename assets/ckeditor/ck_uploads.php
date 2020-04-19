@@ -73,9 +73,14 @@ if(isset($_FILES['upload']) && strlen($_FILES['upload']['name']) > 1) {
     // If no errors, upload the image, else, output the errors 
     if($re == ''){ 
         if(copy($_FILES['upload']['tmp_name'], $uploadpath)) { 
+            //EDITAR 
+            //DESARROLLO
+            $urlComienzo = "http://192.168.64.3/Parroquia_San_Juan_Bosco/";
+            //PRODUCCION
+            //$urlComienzo = "http://192.168.64.3/Parroquia_San_Juan_Bosco/";
             $CKEditorFuncNum = $_GET['CKEditorFuncNum']; 
-            $url = '../assets/ckeditor/'. $upload_dir . $f_name; 
-            $msg = F_NAME .'.'. $type .' cargada exitosamente al servidor '; 
+            $url = $urlComienzo.'assets/ckeditor/'. $upload_dir . $f_name; 
+            $msg = F_NAME .'.'. $type .' cargada exitosamente al servidor '.$url; 
             $re = in_array($type, $imgset['type']) ? "<script>window.parent.CKEDITOR.tools.callFunction($CKEditorFuncNum, '$url', '$msg')</script>":'<script>var cke_ob = window.parent.CKEDITOR; for(var ckid in cke_ob.instances) { if(cke_ob.instances[ckid].focusManager.hasFocus) break;} cke_ob.instances[ckid].insertHtml(\' \', \'unfiltered_html\'); alert("'. $msg .'"); var dialog = cke_ob.dialog.getCurrent();dialog.hide();</script>'; 
         }else{ 
             $re = '<script>alert("No se pudo cargar el archivo '.$uploadpath.'")</script>'; 

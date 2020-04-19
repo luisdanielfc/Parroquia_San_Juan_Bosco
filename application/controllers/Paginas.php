@@ -110,7 +110,7 @@
         private function getImagen($html) {
             $lastPos = 0;
             $positions = array();
-            $direccion = 'src="../assets/ckeditor/uploads/';
+            $direccion = '/assets/ckeditor/uploads/';
 
             while (($lastPos = strpos($html, $direccion, $lastPos)) !== false) {
                 $positions[] = $lastPos + strlen($direccion);
@@ -137,7 +137,11 @@
                 $imagen = base_url("assets/ckeditor/uploads/".$imagen);
             } else {
                 $dir = scandir(FCPATH."assets/images/muestra/");
-                $imagen = base_url("assets/images/muestra/".$dir[array_rand($dir, 1)]);
+
+                while ($imagen == "" || substr($imagen, 0, 1) == ".")
+                    $imagen = $dir[array_rand($dir, 1)];
+            
+                $imagen = base_url("assets/images/muestra/".$imagen);  
             }
 
             return $imagen;

@@ -92,7 +92,7 @@
                                     <li><a class="opcion-header" href="<?php echo base_url(); ?>grupos">Grupos</a></li>
                                     <li><a class="opcion-header" href="<?php echo base_url(); ?>noticias">Noticias</a></li>
                                     <li><a class="opcion-header" href="<?php echo base_url(); ?>contactanos">Contáctanos</a></li>
-                                    <li><a class="opcion-header" href="<?php echo base_url(); ?>administracion">Administrar Contenido</a></li>
+                                    <!--<li><a class="opcion-header" href="<?php echo base_url(); ?>administracion">Administrar Contenido</a></li>-->
                                 </ul>
                             </nav>
 

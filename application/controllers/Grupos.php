@@ -12,6 +12,11 @@
 
             foreach ($grupos as $grupo) {
                 $grupo["imagen"] = $this->getImagen($grupo["Contenido"]);
+                $grupo["Contenido"] = $this->getContenido($grupo["Contenido"]);
+
+                if (strlen($grupo["Contenido"]) > 30)
+                    $grupo["Contenido"] = substr($grupo["Contenido"], 0, 31)."...";
+
                 array_push($data['grupos'], $grupo);
             }
 
@@ -136,6 +141,9 @@
             redirect('grupos');
         }
 
+        /**
+         * Metodo que verifica si el usuario actual posee permisos para hacer esta accion.
+         */
         private function verificarPermisos() {
             if (empty($this->session->get_userdata('usuario'))) {
                 $this->session->set_flashdata('mensaje', 
@@ -149,6 +157,11 @@
             }
         }
 
+        /**
+         * Funcion que extrae contenido limpio para mostrar en la lista de este modulo
+         * @param $html   Codigo HTML que posee
+         * @return   texto con el contenido a mostrar
+         */
         private function getContenido($html) {
             $lastPos = 0;
             $contenido = "";
@@ -164,13 +177,18 @@
                     $contenido = "";
             }
 
-            return $contenido;
+            return ($contenido != "") ? $contenido : "Grupo de la Parroquia. Lea más información sobre este!";
         }
 
+        /**
+         * Funcion que extrae una imagen para mostrar a la entidad
+         * @param $html   Codigo HTML que posee
+         * @return URL de ubicacion de la imagen
+         */
         private function getImagen($html) {
             $lastPos = 0;
             $positions = array();
-            $direccion = 'src="../assets/ckeditor/uploads/';
+            $direccion = '/assets/ckeditor/uploads/';
 
             while (($lastPos = strpos($html, $direccion, $lastPos)) !== false) {
                 $positions[] = $lastPos + strlen($direccion);
@@ -197,12 +215,22 @@
                 $imagen = base_url("assets/ckeditor/uploads/".$imagen);
             } else {
                 $dir = scandir(FCPATH."assets/images/muestra/");
-                $imagen = base_url("assets/images/muestra/".$dir[array_rand($dir, 1)]);
+
+                while ($imagen == "" || substr($imagen, 0, 1) == ".")
+                    $imagen = $dir[array_rand($dir, 1)];
+                
+                $imagen = base_url("assets/images/muestra/".$imagen);
             }
 
             return $imagen;
         }
 
+        /**
+         * Funcion que verifica si una cadena de caracteres termina con una dada
+         * @param   $str   Cadena a verificar
+         * @param   $sub   Cadena que puede o no que termine $str
+         * @return   true, en case de que si termine.
+         */
         private function endsWith($str, $sub) {
             return (substr($str, strlen($str) - strlen($sub)) == $sub);
         }
