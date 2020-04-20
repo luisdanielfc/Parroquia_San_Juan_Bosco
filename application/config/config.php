@@ -24,6 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 $config['base_url'] = 'http://192.168.64.3/Parroquia_San_Juan_Bosco';
+//$config['base_url'] = 'https://parroquiasanjuanboscocoro.000webhostapp.com/';
 
 /*
 |--------------------------------------------------------------------------

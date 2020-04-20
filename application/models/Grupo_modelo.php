@@ -14,14 +14,24 @@
          * Funcion que retorna todos los grupos en orden alfabetico
          */
         public function getGrupos() {
-            return $this->db->order_by('Nombre', 'ASC')->get('Grupo')->result_array();
+            //return $this->db->order_by('Nombre', 'ASC')->get('Grupo')->result_array();
+            $this->db->order_by("Nombre", "ASC");
+            $query = $this->db->get("Grupo");
+            /*$data = array();
+            if($query !== FALSE && $query->num_rows() > 0){
+                $data = $query->result_array();
+            }*/
+            
+            return ($query !== FALSE && $query->num_rows() > 0) ? $query->result_array() : array();
         }
 
         /**
          * Funcion que retorna un grupo en especifico dado su ID
          */
         public function getGrupo($slug) {
-            return $this->db->get_where('Grupo', array('Id' => $slug))->row_array();
+            //return $this->db->get_where('Grupo', array('Id' => $slug))->row_array();
+            $query = $this->db->get_where('Grupo', array('Id' => $slug));
+            return ($query !== FALSE && $query->num_rows() > 0) ? $query->row_array() : null;
         }
 
         /**

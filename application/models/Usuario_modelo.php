@@ -20,9 +20,9 @@
             $resultado =  $this->db->get_where('Usuario', 
                 array(
                     'Usuario' => $usuario,
-                    'Contrasena' => $contrasena))
-                ->row_array();
-
-            return $resultado;
+                    'Contrasena' => $contrasena));
+            
+            return ($resultado !== FALSE && $resultado->num_rows() > 0) 
+                    ? $resultado->row_array() : null;
         }
     }

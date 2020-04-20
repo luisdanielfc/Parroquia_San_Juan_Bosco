@@ -77,7 +77,7 @@ if(isset($_FILES['upload']) && strlen($_FILES['upload']['name']) > 1) {
             //DESARROLLO
             $urlComienzo = "http://192.168.64.3/Parroquia_San_Juan_Bosco/";
             //PRODUCCION
-            //$urlComienzo = "http://192.168.64.3/Parroquia_San_Juan_Bosco/";
+            //$urlComienzo = "https://parroquiasanjuanboscocoro.000webhostapp.com/";
             $CKEditorFuncNum = $_GET['CKEditorFuncNum']; 
             $url = $urlComienzo.'assets/ckeditor/'. $upload_dir . $f_name; 
             $msg = F_NAME .'.'. $type .' cargada exitosamente al servidor '.$url; 

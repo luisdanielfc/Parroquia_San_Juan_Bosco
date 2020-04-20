@@ -14,7 +14,15 @@
          * Funcion que retorna todos las noticias en orden de mas reciente a menos eciente
          */
         public function getNoticias() {
-            return $this->db->order_by('Fecha', 'DESC')->get('Noticia')->result_array();
+            $this->db->order_by("Fecha", "DESC");
+            $query = $this->db->get("Noticia");
+            /*$data = array();*/
+            /*if($query !== FALSE && $query->num_rows() > 0){
+                //$data = $query->result_array();
+                print_r($query);
+            }*/
+            
+            return ($query !== FALSE && $query->num_rows() > 0) ? $query->result_array() : array();
         }
 
         /**
@@ -23,7 +31,9 @@
          * @return array con informacion de la noticia buscada; null en caso contrario
          */
         public function getNoticia($slug) {
-            return $this->db->get_where('Noticia', array('Id' => $slug))->row_array();
+            //return $this->db->get_where('Noticia', array('Id' => $slug))->row_array();
+            $query = $this->db->get_where('Noticia', array('Id' => $slug));
+            return ($query !== FALSE && $query->num_rows() > 0) ? $query->row_array() : null;
         }
 
         /**

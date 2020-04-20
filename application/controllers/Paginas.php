@@ -57,7 +57,6 @@
                 }
 
                 $grupos = $filtrados;
-
             } elseif (count($grupos) < $mitad && count($noticias) >= $mitad 
                         && count($noticias) >= $cantidadMaximaSlides - count($grupos)) {
                 $noticias = array_slice($noticias, $cantidadMaximaSlides - count($grupos), $cantidadMaximaSlides - count($grupos));
