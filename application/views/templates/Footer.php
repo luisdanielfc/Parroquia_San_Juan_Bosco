@@ -1,4 +1,4 @@
-    <footer class="site-footer" style="margin-top: 100px;">
+    <footer class="site-footer" style="margin-top: 50px;">
         <div class="footer-widgets">
             <div class="container">
                 <div class="row">

@@ -20,7 +20,7 @@
                         <p>Nos podrás encontrar en la siguiente dirección o llámanos a nuestro número en nuestro horario de atención. También nos puedes encontrar y seguir en nuestras redes sociales</p>
 
                         <ul class="contact-info p-0">
-                            <li><i class="fa fa-clock-o"></i><span>7:00 AM - 12:00 PM y 2:00 PM - 7:00 PM</span></li>
+                            <li><i class="fa fa-clock-o"></i><span>Despacho: Lunes a Viernes de 2:30 PM - 6:00 PM</span></li>
                             <li><i class="fa fa-map-marker"></i><a href="https://goo.gl/maps/hnwECWcE5WwbtJAW9" target="_blank"><span>Avenida Los Médanos con Avenida Josefa Camejo. Sector San Bosco. Santa Ana de Coro, Falcón, Venezuela</span></li>
                             <li><i class="fa fa-phone"></i><a href="tel:+582682528172"><span>+58 268 252 8172</span></a></li>
                             <li><i class="fa fa-envelope"></i><a href="mailto:psanjuanbosco.coro@gmail.com" target="_blank"><span>psanjuanbosco.coro@gmail.com</span></a></li>

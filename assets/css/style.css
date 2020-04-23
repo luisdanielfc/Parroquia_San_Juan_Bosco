@@ -657,12 +657,12 @@ ul.tabs-nav .tab-nav.active {
 }
 
 .icon-box figure img:nth-of-type(2) {
-    display: none;
+    /*display: none;*/
 }
 
 .icon-box:hover figure img:nth-of-type(1),
 .icon-box.active figure img:nth-of-type(1) {
-    display: none;
+    /*display: none;*/
 }
 
 .icon-box:hover figure img:nth-of-type(2),
@@ -768,7 +768,7 @@ ul.tabs-nav .tab-nav.active {
     z-index: -1;
     width: 100%;
     height: 100%;
-    background: rgba(21,21,21,.9);
+    background: white;
 }
 
 .welcome-content .entry-title {
@@ -1103,7 +1103,7 @@ ul.tabs-nav .tab-nav.active {
 # Home Milestone
 --------------------------------*/
 .home-page-limestone {
-    padding: 96px 0;
+    padding: 50px 0;
 }
 
 .home-page-limestone .section-heading .entry-title {
@@ -2130,4 +2130,14 @@ ul.tabs-nav .tab-nav.active {
     color: #7b7b7b;
     background: #131212;
     text-align: center;
+}
+
+.info-imagen {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}
+
+.info-parrafo {
+    text-align: justify;
 }
