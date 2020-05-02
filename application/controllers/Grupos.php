@@ -23,6 +23,8 @@
             $data['usuario'] = (!empty($this->session->get_userdata('usuario')) && isset($this->session->get_userdata('usuario')["usuario"])) 
                 ? $this->session->get_userdata('usuario')["usuario"] : null; 
 
+            $this->output->cache(604800);
+
             $this->load->view('templates/Header', $data);
             $this->load->view('paginas/grupos/indice', $data);
             $this->load->view('templates/Footer');
@@ -40,6 +42,8 @@
             
             $data['usuario'] = (!empty($this->session->get_userdata('usuario')) && isset($this->session->get_userdata('usuario')["usuario"])) 
                 ? $this->session->get_userdata('usuario')["usuario"] : null; 
+
+            $this->output->cache(604800);
 
             $this->load->view('templates/Header', $data);
             $this->load->view('paginas/grupos/ver', $data);
@@ -75,6 +79,8 @@
                 $data['usuario'] = (!empty($this->session->get_userdata('usuario')) && isset($this->session->get_userdata('usuario')["usuario"])) 
                     ? $this->session->get_userdata('usuario')["usuario"] : null; 
 
+                $this->output->cache(604800);
+
                 $this->load->view('templates/Header', $data);
                 $this->load->view('paginas/grupos/crear');
                 $this->load->view('templates/Footer');
@@ -102,11 +108,14 @@
                 show_404();
 
             $this->verificarPermisos();
+
             $data["grupo"] = $this->grupo_modelo->getGrupo($id);
 
             $this->form_validation->set_rules('nombre', 'Nombre', 'required');
             $this->form_validation->set_rules('contenido', 'Contenido', 'required');
             $this->form_validation->set_message('required', 'El campo %s es requerido');
+
+            $this->output->cache(604800);
 
             $this->load->view('templates/Header');
             $this->load->view('paginas/grupos/editar', $data);

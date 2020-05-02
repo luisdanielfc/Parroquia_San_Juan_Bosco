@@ -20,7 +20,9 @@
                 $data["exito"] = $this->session->flashdata("mensaje")["exito"];
                 $data["mensaje"] = $this->session->flashdata("mensaje")["mensaje"];
             }
-            
+
+            //$this->output->cache(604800);
+
             $this->load->view('templates/Header', $data);
             $this->load->view('paginas/'.$page, $data);
             $this->load->view('templates/Footer');

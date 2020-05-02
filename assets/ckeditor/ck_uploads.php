@@ -80,7 +80,7 @@ if(isset($_FILES['upload']) && strlen($_FILES['upload']['name']) > 1) {
             //$urlComienzo = "https://parroquiasanjuanboscocoro.000webhostapp.com/";
             $CKEditorFuncNum = $_GET['CKEditorFuncNum']; 
             $url = $urlComienzo.'assets/ckeditor/'. $upload_dir . $f_name; 
-            $msg = F_NAME .'.'. $type .' cargada exitosamente al servidor '.$url; 
+            $msg = F_NAME .'.'. $type .' cargada exitosamente al servidor '; 
             $re = in_array($type, $imgset['type']) ? "<script>window.parent.CKEDITOR.tools.callFunction($CKEditorFuncNum, '$url', '$msg')</script>":'<script>var cke_ob = window.parent.CKEDITOR; for(var ckid in cke_ob.instances) { if(cke_ob.instances[ckid].focusManager.hasFocus) break;} cke_ob.instances[ckid].insertHtml(\' \', \'unfiltered_html\'); alert("'. $msg .'"); var dialog = cke_ob.dialog.getCurrent();dialog.hide();</script>'; 
         }else{ 
             $re = '<script>alert("No se pudo cargar el archivo '.$uploadpath.'")</script>'; 

@@ -122,40 +122,24 @@
 <div class="home-page-icon-boxes" style="background: grey;">
         <div class="container">
             <div class="row">
-                <div class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0">
-                    <div class="icon-box active">
+                <div class="col-12 col-md-6 col-lg-3 mt-3 mt-lg-0">
+                    <div class="icon-box active" data-toggle="modal" data-target="#modal-misa">
                         <figure class="d-flex justify-content-center">
                             <img src="<?= base_url("assets/images/church-icon.png") ?>" alt="" style="width: 50px; height: 50px;">
                         </figure>
 
                         <header class="entry-header">
-                            <h3 class="entry-title">Misa</h3>
+                            <h3 class="entry-title">Misa y Eucaristia</h3>
                         </header>
 
                         <div class="entry-content">
-                            <p>Lunes a Sábado  a las 6:00 PM</p>
+                            <p>Haga clic para saber los horarios</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0">
-                    <div class="icon-box active">
-                        <figure class="d-flex justify-content-center">
-                            <img src="<?= base_url("assets/images/holy-grail-icon.png") ?>" alt="" style="width: 50px; height: 50px;">
-                        </figure>
-
-                        <header class="entry-header">
-                            <h3 class="entry-title">Eucaristia</h3>
-                        </header>
-
-                        <div class="entry-content">
-                            <p>Todos los Domingos a las 6:30 PM</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0">
-                    <div class="icon-box active">
+                <div class="col-12 col-md-6 col-lg-3 mt-3 mt-lg-0">
+                    <div class="icon-box active" data-toggle="modal" data-target="#modal-bautizo">
                         <figure class="d-flex justify-content-center">
                             <img src="<?= base_url("assets/images/baptism-icon.png") ?>" alt="" style="width: 50px; height: 50px;">
                         </figure>
@@ -165,7 +149,41 @@
                         </header>
 
                         <div class="entry-content">
-                            <p>Todos los Sábados</p>
+                            <p>Haga clic para obtener más información</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3 mt-3 mt-lg-0">
+                    <div class="icon-box active" data-toggle="modal" data-target="#modal-comunion">
+                        <figure class="d-flex justify-content-center">
+                            <img src="<?= base_url("assets/images/holy-grail-icon.png") ?>" alt="" style="width: 50px; height: 50px;">
+                        </figure>
+
+                        <header class="entry-header">
+                            <h3 class="entry-title">Catequesis</h3>
+                        </header>
+
+                        <div class="entry-content">
+                            <p>Haga clic para saber los requerimientos</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3 mt-3 mt-lg-0">
+                    <div class="icon-box active" data-toggle="modal" data-target="#modal-matrimonio">
+                        <figure class="d-flex justify-content-center">
+                            <img src="<?= base_url("assets/images/wedding-couple.png") ?>" alt="" style="width: 50px; height: 50px;">
+                        </figure>
+
+                        <header class="entry-header">
+                            <h3 class="entry-title">Matrimonios</h3>
+                        </header>
+
+                        <div class="entry-content">
+                            <!--<p>Lunes a Sábado  a las 6:00 PM</p>-->
+                                                        <!--<p>Todos los Domingos a las 6:30 PM</p>-->
+                            <p>Haga clic aquí para tener mayor información</p>
                         </div>
                     </div>
                 </div>
@@ -233,3 +251,124 @@
         </div><!-- .row -->
     </div><!-- .container -->
 </div><!-- .our-causes -->
+
+<!-- Modal de misas-->
+<div id="modal-misa" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Misas y Eucaristias</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h6>Eucaristía</h6>
+                <ul>
+                    <li>Domingos a las 8:00 AM, 9:30 AM, 5:00 PM y 6:30 PM</li>
+                </ul>
+                <h6>Misa</h6>
+                <ul>
+                    <li>Lunes a Sábado a las 6:00 PM</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de bautizos-->
+<div id="modal-bautizo" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Bautizos</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h6>Requisitos</h6>
+                <ul>
+                    <li>Partida de nacimiento del niño o niña</li>
+                    <li>Copia de cédula de los padrinos</li>
+                    <li>Hacer el curso prebautismal</li>
+                    <li>Entregar con antelación los documentos por secretaria</li>
+                </ul>
+                <h6>Horarios:</h6>
+                <ul>
+                    <li>Todos los Sábados</li>
+                </ul>            
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modal-comunion" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Catequesis</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h6>Primera Comunión</h6>
+                <ul>
+                    <li>Niños de 8 y 9 años inician la primera etapa (iniciación)</li>
+                    <li>Niños de 10 y 11 segunda etapa (Sacramental)</li>
+                </ul>
+                <h6>Confirmación</h6>
+                <ul>
+                    <li>Jóvenes de 14 a 17</li>
+                </ul> 
+                <h6>Catequesis de Adultos</h6>
+                <ul>
+                    <li>Para padres y adultos sin sacramentos (dirigirse al sacerdote)</li>
+                </ul>           
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de matrimonio-->
+<div id="modal-matrimonio" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Matrimonios</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h6>Requisitos</h6>
+                <ul>
+                    <li>Foto tipo carnet</li>
+                    <li>Copia de cédula de contrayentes</li>
+                    <li>Fé de bautismo</li>
+                    <li>Constancia de confirmación</li>
+                    <li>Curso pre matrimonial</li>
+                    <li>Acta de matrimonio civil</li>
+                    <li>Llenar expediente matrimonial</li>
+                    <li>Copia de CI de dos testigos</li>
+                    <li>Copia de CI de dos padrinos</li>
+                    <li>Pago de Aranceles</li>
+                    <li>Consignar una carpeta oficio con los documentos</li>
+                </ul>
+            </div>
+            <div class="modal-footer">             
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>

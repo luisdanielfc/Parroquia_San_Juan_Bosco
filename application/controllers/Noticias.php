@@ -23,6 +23,8 @@
             $data['usuario'] = (!empty($this->session->get_userdata('usuario')) && isset($this->session->get_userdata('usuario')["usuario"])) 
                 ? $this->session->get_userdata('usuario')["usuario"] : null; 
 
+            $this->output->cache(604800);
+
             $this->load->view('templates/Header', $data);
             $this->load->view('paginas/noticias/indice', $data);
             $this->load->view('templates/Footer');
@@ -40,6 +42,8 @@
 
             $data['usuario'] = (!empty($this->session->get_userdata('usuario')) && isset($this->session->get_userdata('usuario')["usuario"])) 
                 ? $this->session->get_userdata('usuario')["usuario"] : null; 
+
+            $this->output->cache(604800);
 
             $this->load->view('templates/Header', $data);
             $this->load->view('paginas/noticias/ver', $data);
@@ -74,6 +78,8 @@
             } else {
                 $data['usuario'] = (!empty($this->session->get_userdata('usuario')) && isset($this->session->get_userdata('usuario')["usuario"])) 
                 ? $this->session->get_userdata('usuario')["usuario"] : null; 
+
+                $this->output->cache(604800);
 
                 $this->load->view('templates/Header', $data);
                 $this->load->view('paginas/noticias/crear');
@@ -112,6 +118,8 @@
             $this->form_validation->set_rules('titulo', 'Titulo', 'required');
             $this->form_validation->set_rules('contenido', 'Contenido', 'required');
             $this->form_validation->set_message('required', 'El campo %s es requerido');
+
+            $this->output->cache(604800);
 
             $this->load->view('templates/Header', $data);
             $this->load->view('paginas/noticias/editar', $data);

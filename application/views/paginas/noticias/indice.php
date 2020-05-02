@@ -40,7 +40,7 @@
                                 <div class="col-12 col-md-6 col-lg-4">
                                     <div class="cause-wrap" id="<?php echo base_url("noticias/".$noticias[$i]["Id"]); ?>" onClick="redirect(this.id)" style="cursor: pointer; border: 1px solid #e0e0e0;">       
                                         <figure class="m-0">
-                                            <img src="<?php echo $noticias[$i]["imagen"]; ?>" alt="" style="width: 348px; height: 204px;">
+                                            <img src="<?php echo $noticias[$i]["imagen"]; ?>" alt="" style="width: 100%; height: 204px;">
                                         </figure>     
 
                                         <div class="cause-content-wrap">
