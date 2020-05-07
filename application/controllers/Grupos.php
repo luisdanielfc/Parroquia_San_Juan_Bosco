@@ -9,6 +9,15 @@
         public function index($data = null) {
             $grupos = $this->grupo_modelo->getGrupos();
             $data['grupos'] = array();
+            
+             if (empty($grupos)) {
+                for ($i = 0; $i < 3; $i++) {
+                    $grupos = $this->grupo_modelo->getGrupos();
+                    
+                    if (!empty($grupos)) 
+                        break;
+                }
+            }
 
             foreach ($grupos as $grupo) {
                 $grupo["imagen"] = $this->getImagen($grupo["Contenido"]);
@@ -23,7 +32,7 @@
             $data['usuario'] = (!empty($this->session->get_userdata('usuario')) && isset($this->session->get_userdata('usuario')["usuario"])) 
                 ? $this->session->get_userdata('usuario')["usuario"] : null; 
 
-            $this->output->cache(604800);
+            //$this->output->cache(604800);
 
             $this->load->view('templates/Header', $data);
             $this->load->view('paginas/grupos/indice', $data);
@@ -37,13 +46,22 @@
         public function ver($slug = null) {
             $data['grupo'] = $this->grupo_modelo->getGrupo($slug);
 
-            if (empty($data['grupo']))
-                show_404();
+            if (empty($data['grupo'])) {
+                for ($i = 0; $i < 3; $i++) {
+                    $data['grupo'] = $this->grupo_modelo->getGrupo($slug);
+                    
+                    if (!empty($data['grupo'])) 
+                        break;
+                }
+
+                if (empty($data['grupo'])) 
+                    show_404();
+            }
             
             $data['usuario'] = (!empty($this->session->get_userdata('usuario')) && isset($this->session->get_userdata('usuario')["usuario"])) 
                 ? $this->session->get_userdata('usuario')["usuario"] : null; 
 
-            $this->output->cache(604800);
+            //$this->output->cache(604800);
 
             $this->load->view('templates/Header', $data);
             $this->load->view('paginas/grupos/ver', $data);
@@ -79,7 +97,7 @@
                 $data['usuario'] = (!empty($this->session->get_userdata('usuario')) && isset($this->session->get_userdata('usuario')["usuario"])) 
                     ? $this->session->get_userdata('usuario')["usuario"] : null; 
 
-                $this->output->cache(604800);
+                //$this->output->cache(604800);
 
                 $this->load->view('templates/Header', $data);
                 $this->load->view('paginas/grupos/crear');
@@ -110,12 +128,24 @@
             $this->verificarPermisos();
 
             $data["grupo"] = $this->grupo_modelo->getGrupo($id);
+            
+            if (empty($data['grupo'])) {
+                for ($i = 0; $i < 3; $i++) {
+                    $data['grupo'] = $this->grupo_modelo->getGrupo($id);
+                    
+                    if (!empty($data['grupo'])) 
+                        break;
+                }
+
+                if (empty($data['grupo'])) 
+                    show_404();
+            }
 
             $this->form_validation->set_rules('nombre', 'Nombre', 'required');
             $this->form_validation->set_rules('contenido', 'Contenido', 'required');
             $this->form_validation->set_message('required', 'El campo %s es requerido');
 
-            $this->output->cache(604800);
+            //$this->output->cache(604800);
 
             $this->load->view('templates/Header');
             $this->load->view('paginas/grupos/editar', $data);

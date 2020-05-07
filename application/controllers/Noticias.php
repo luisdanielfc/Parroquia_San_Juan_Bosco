@@ -10,6 +10,15 @@
             $noticias = $this->noticia_modelo->getNoticias();
             $data['noticias'] = array();
 
+            if (empty($noticias)) {
+                for ($i = 0; $i < 3; $i++) {
+                    $noticias = $this->noticia_modelo->getNoticias();
+                    //print_r($noticias);
+                    if (!empty($$noticias)) 
+                        break;
+                }
+            }
+            
             foreach ($noticias as $noticia) {
                 $noticia["imagen"] = $this->getImagen($noticia["Contenido"]);
                 $noticia["Contenido"] = $this->getContenido($noticia["Contenido"]);
@@ -23,7 +32,7 @@
             $data['usuario'] = (!empty($this->session->get_userdata('usuario')) && isset($this->session->get_userdata('usuario')["usuario"])) 
                 ? $this->session->get_userdata('usuario')["usuario"] : null; 
 
-            $this->output->cache(604800);
+            //$this->output->cache(604800);
 
             $this->load->view('templates/Header', $data);
             $this->load->view('paginas/noticias/indice', $data);
@@ -37,13 +46,22 @@
         public function ver($slug = null) {
             $data['noticia'] = $this->noticia_modelo->getNoticia($slug);
 
-            if (empty($data['noticia']))
-                show_404();
+            if (empty($data['noticia'])) {
+                for ($i = 0; $i < 3; $i++) {
+                    $data['noticia'] = $this->noticia_modelo->getNoticia($slug);
+                    
+                    if (!empty($data['noticia'])) 
+                        break;
+                }
 
+                if (empty($data['noticia'])) 
+                    show_404();
+            }
+            
             $data['usuario'] = (!empty($this->session->get_userdata('usuario')) && isset($this->session->get_userdata('usuario')["usuario"])) 
                 ? $this->session->get_userdata('usuario')["usuario"] : null; 
 
-            $this->output->cache(604800);
+            //$this->output->cache(604800);
 
             $this->load->view('templates/Header', $data);
             $this->load->view('paginas/noticias/ver', $data);
@@ -79,7 +97,7 @@
                 $data['usuario'] = (!empty($this->session->get_userdata('usuario')) && isset($this->session->get_userdata('usuario')["usuario"])) 
                 ? $this->session->get_userdata('usuario')["usuario"] : null; 
 
-                $this->output->cache(604800);
+                //$this->output->cache(604800);
 
                 $this->load->view('templates/Header', $data);
                 $this->load->view('paginas/noticias/crear');
@@ -111,7 +129,20 @@
                 
             $this->verificarPermisos();
 
-            $data["grupo"] = $this->noticia_modelo->getNoticia($id);
+            $data["noticia"] = $this->noticia_modelo->getNoticia($id);
+            
+            if (empty($data["noticia"])) {
+                for ($i = 0; $i < 3; $i++) {
+                    $data["noticia"] = $this->noticia_modelo->getNoticia($id);
+                    
+                    if (!empty($data["noticia"])) 
+                        break;
+                }
+
+                if (empty($data["noticia"])) 
+                    show_404();
+            }
+            
             $data['usuario'] = (!empty($this->session->get_userdata('usuario')) && isset($this->session->get_userdata('usuario')["usuario"])) 
                 ? $this->session->get_userdata('usuario')["usuario"] : null; 
 
@@ -119,7 +150,7 @@
             $this->form_validation->set_rules('contenido', 'Contenido', 'required');
             $this->form_validation->set_message('required', 'El campo %s es requerido');
 
-            $this->output->cache(604800);
+            //$this->output->cache(604800);
 
             $this->load->view('templates/Header', $data);
             $this->load->view('paginas/noticias/editar', $data);
