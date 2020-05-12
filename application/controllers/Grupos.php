@@ -210,7 +210,8 @@
                 $fin = strpos($html, "</p>", $lastPos);
                 $contenido = $paragraph = substr($html, $lastPos, $fin - $lastPos);
 
-                if (!preg_match("#^(<[^>]*>)+$#", $contenido)) 
+                //if (!preg_match("#^(<[^>]*>)+$#", $contenido)) 
+                if (!preg_match("/<[^<]+>/", $contenido)) 
                     break;
                 else 
                     $contenido = "";

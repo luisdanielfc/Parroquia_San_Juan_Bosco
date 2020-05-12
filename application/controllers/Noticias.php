@@ -215,7 +215,8 @@
                 $fin = strpos($html, "</p>", $lastPos);
                 $contenido = $paragraph = substr($html, $lastPos, $fin - $lastPos);
 
-                if (!preg_match("#^(<[^>]*>)+$#", $contenido)) 
+                //if (!preg_match("#^(<[^>]*>)+$#", $contenido)) 
+                if (!preg_match("/<[^<]+>/", $contenido)) 
                     break;
                 else 
                     $contenido = "";
@@ -274,6 +275,7 @@
          * @param   $str   Cadena a verificar
          * @param   $sub   Cadena que puede o no que termine $str
          * @return   true, en case de que si termine.
+         * @source https://www.php.net/manual/en/ref.strings.php
          */
         private function endsWith($str, $sub) {
             return (substr($str, strlen($str) - strlen($sub)) == $sub);

@@ -28,7 +28,9 @@
                         <div class="foot-contact">
                             <h2>Nuestras Redes</h2>
                             <ul>
+                                <li><i class="fa fa-facebook"></i><a href="https://www.facebook.com/parroquiasanjuan.bosco.9421" target="_blank"><span>Parroquia San Juan Bosco</span></a></li>
                                 <li><i class="fa fa-instagram"></i><a href="https://www.instagram.com/psanjuanbosco.coro" target="_blank"><span>psanjuanbosco.coro</span></a></li>
+                                <li><i class="fa fa-youtube"></i><a href="https://www.youtube.com/channel/UCQQyIyD30JVAetRhufZ6wXw" target="_blank"><span>Parroquia sanjuanbosco</span></a></li>
                             </ul>
                         </div>
                     </div>

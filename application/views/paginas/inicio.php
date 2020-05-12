@@ -102,7 +102,7 @@
                     </header>
 
                     <div class="entry-content mt-5">
-                        <p style="color: black; text-align: justify;">Arquidiócesis de Coro, ubicada en la Ciudad de Coro y  de formación salesiana durante 50 años, desde octubre pasado fue asumida por la Arquidiócesis ya que los padres salesianos por falta de vocaciones decidieron entregarla. Desde entonces la ha asumido la Arquidiócesis de Coro. </p>
+                        <p style="color: black; text-align: justify;">Arquidiócesis de Coro, ubicada en la Ciudad de Coro y  de formación salesiana durante 50 años, desde el 1 de Octubre de 2017 fue asumida por la Arquidiócesis ya que los padres salesianos por falta de vocaciones decidieron entregarla. Desde entonces la ha asumido la Arquidiócesis de Coro. </p>
                         <p style="color: black; text-align: justify;">Comunidad joven, alegre de muchos movimientos y asistencia de fieles. Grande en su extensión, incluso acoge a una comunidad rural. </p>
                     </div>
 

@@ -90,6 +90,11 @@
             );
         }
 
+        /**
+         * Funcion que retorna textos dentro de la primera etiqueta <p> que existe en el HTML
+         * @param $html   contenido del grupo/noticia
+         * @return texto para mostrar
+         */
         private function getContenido($html) {
             $lastPos = 0;
             $contenido = "";
@@ -99,15 +104,23 @@
                 $fin = strpos($html, "</p>", $lastPos);
                 $contenido = $paragraph = substr($html, $lastPos, $fin - $lastPos);
 
-                if (!preg_match("#^(<[^>]*>)+$#", $contenido)) 
+                //if (!preg_match("#^(<[^>]*>)+$#", $contenido)) 
+                if (!preg_match("/<[^<]+>/", $contenido)) 
                     break;
                 else 
                     $contenido = "";
             }
 
+            print($contenido);
+
             return $contenido;
         }
 
+        /**
+         * Funcion que retorna imagen para mostrar al grupo/noticia
+         * @param $html   contenido del grupo/noticia
+         * @return URL de la imagen
+         */
         private function getImagen($html) {
             $lastPos = 0;
             $positions = array();
@@ -148,6 +161,13 @@
             return $imagen;
         }
 
+        /**
+         * Funcion que verifica si una cadena de caracteres termina con una dada
+         * @param   $str   Cadena a verificar
+         * @param   $sub   Cadena que puede o no que termine $str
+         * @return   true, en case de que si termine.
+         * @source https://www.php.net/manual/en/ref.strings.php
+         */
         private function endsWith($str, $sub) {
             return (substr($str, strlen($str) - strlen($sub)) == $sub);
         }

@@ -24,7 +24,9 @@
                             <li><i class="fa fa-map-marker"></i><a href="https://goo.gl/maps/hnwECWcE5WwbtJAW9" target="_blank"><span>Avenida Los Médanos con Avenida Josefa Camejo. Sector San Bosco. Santa Ana de Coro, Falcón, Venezuela</span></li>
                             <li><i class="fa fa-phone"></i><a href="tel:+582682528172"><span>+58 268 252 8172</span></a></li>
                             <li><i class="fa fa-envelope"></i><a href="mailto:psanjuanbosco.coro@gmail.com" target="_blank"><span>psanjuanbosco.coro@gmail.com</span></a></li>
+                            <li><i class="fa fa-facebook"></i><a href="https://www.facebook.com/parroquiasanjuan.bosco.9421" target="_blank"><span>Parroquia San Juan Bosco</span></a></li>
                             <li><i class="fa fa-instagram"></i><a href="https://www.instagram.com/psanjuanbosco.coro" target="_blank"><span>psanjuanbosco.coro</span></a></li>
+                            <li><i class="fa fa-youtube"></i><a href="https://www.youtube.com/channel/UCQQyIyD30JVAetRhufZ6wXw" target="_blank"><span>Parroquia sanjuanbosco</span></a></li>
                         </ul>
                     </div>
                 </div><!-- .col -->
